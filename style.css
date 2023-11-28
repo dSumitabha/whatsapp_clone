@@ -1,0 +1,321 @@
+*{
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+	font-family : 'Open Sans' , sans-srif ;
+}
+:root {
+	--primary_color :#00a884;
+	--secondary_color : #fcf5eb;
+	--light_green : #42e35f;
+	--dark_green : #067664;
+}
+
+
+body {
+	height : 100vh;
+	background-image : linear-gradient(
+			180deg, var(--primary_color) 15vh, var(--secondary_color) 15vh);
+	padding : 1px;
+	overflow : hidden;
+}
+.container {
+	height : 90vh;
+	max-width : 90vw;
+	margin : 5vh auto;
+	display : flex;
+	overflow : hidden;
+}
+			/* app navigation section */
+.leftside{
+	flex: 30%;
+	background-color : #fff;
+	min-width: 368px;
+	overflow-y : auto;
+}
+::-webkit-Scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 5px;
+}
+
+
+			/* User Details Section */
+.header {
+	height : 3rem;
+	background-color : #e3e3e3;
+	display : flex;
+}
+.user-icon {
+	flex : 30%;
+}
+.user-icon img {
+	height : 2.5rem;
+	margin : 0.25rem;
+	border-radius : 50%;
+}
+.nav-icons {
+	flex : 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-icons ion-icon {
+	display : block;
+	font-size : 1.75rem;
+	cursor : pointer;
+}
+			/* Contacts Styling */
+.contact {
+	height : 3.5rem;
+	background-color : #fff;
+	border-width: 1px 0 0 0;
+    border-color: #c9c9c9;
+    border-style: solid;
+	display : flex;
+	align-items : center;
+	cursor : pointer;
+	justify-content : space-around;
+}
+.contact:hover{
+	background-color: #e3e3e380;
+	transition : 0.5s ease-out;
+}
+.contact-dp {
+	height : 45px;
+	width : 45px;
+	border-radius : 50%;
+	margin : 0.25rem;
+}
+.text-info {
+	width : 65%;
+	height : 100%;
+	padding : 0.5rem;
+	font-family : sans-serif;
+}
+.extra-info {
+	width : 20%;
+	height : 100%;
+}
+.message-preview {
+	font-size : 0.8em;
+	padding-top : 0.2rem;
+	white-space : nowrap;
+	overflow : hidden;
+	text-overflow : ellipsis;
+	background-image: linear-gradient(to right, #000 90%, #fff );
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.extra-info {
+	padding : 0.5rem;
+	
+}
+.last-time {
+	font-size : 0.7rem;
+	text-align : center;
+}
+.unread .extra-info .last-time{
+	color : var(--light_green);
+}
+.unread .extra-info .unread-alert {
+	width : fit-content;
+	min-width : 20px;
+	min-height: 20px;
+	margin : 0.25rem auto;
+	text-align : center;
+	border-radius : 50%;
+	background-color : var(--light_green);
+	color : #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+			/* Chat-box Styling */
+.rightside{
+	flex : 70%;
+	background-image:url('assets/wallpaper.jpg');
+}
+.chat-head {
+	height : 4rem;
+	background-color : var(--dark_green);
+	display : flex;
+	align-items : center;
+	justify-content : space-around;
+}
+.profile-picture {
+	height : 45px;
+	width : 45px;
+	margin : 0.5rem;
+}
+.profile-picture img {
+	width : 100%;
+	border-radius : 50%;
+}
+.head-name {
+	flex : 70%;
+	margin : 0 1rem ;
+	color : #fff;
+	font-weight : bold;
+}
+.chat-head ion-icon {
+	flex : 10%;
+	font-size : 2rem;
+	cursor : pointer;
+	color : #fff;
+}
+#actions {
+	display: none;
+    width: fit-content;
+    background-color: #fff;
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    transform: translate(50% , 50%);
+    list-style: none;
+    padding: 0.5rem 0;
+    box-shadow: #000 -1px 1px 4px 0px;
+	border-radius : 0.5rem;
+	z-index : 9;
+}
+#actions li {
+	padding: 0.25rem 0.5rem;
+}
+#actions li:hover {
+	background-color : #efefef;
+}
+		/* Chat-are Styling */
+.chat-area {
+	height : calc(90vh - 7.5rem);
+	display : flex;
+	flex-direction : column;
+	row-gap : 0.3rem;
+	padding : 0.5rem 0.5rem;
+	overflow-y : auto;
+}
+.message {
+	width : fit-content;
+	padding : 0.5rem 1rem;
+	border-radius : 10px;
+	position : relative;
+}
+.message .time {
+	font-size: 0.5rem;
+    display: block;
+    text-align: right;
+    margin: 0.25rem 0 0 0;
+}
+.message .react {
+	display : none;
+
+}
+.text:active ~ .react {
+	display : block;
+	width : fit-content;
+	background-color : #fff;
+	list-style : none;
+	padding : 0.25rem 0.5rem;
+	border-radius : 1rem;
+	position : absolute;	
+}
+.react:hover {
+	display : block;
+}
+.sent .react {
+	bottom: 90%;
+    left: 16%;
+}
+.received .react {
+    bottom: 90%;
+    left: 20%;
+}
+.react ion-icon {
+	opacity : 0.6 ;
+	font-size : 2rem;
+}
+.react ion-icon:hover {
+	opacity : 1 ;
+	font-size : 2.2rem;
+}
+
+.chat-area .date {
+	width : fit-content;
+	padding : 0.3rem 1rem;
+	border-radius : 0.5rem;
+	font-weight : bold;
+	background-color : var(--secondary_color);
+	margin : 0 auto;
+}
+.sent {
+	background-color : var(--light_green);
+	text-align : right;
+	align-self : flex-end;
+}
+.received {
+	background-color : #fff;
+}
+			/* input area styling  */
+.input-area {
+	height : 3.5rem;
+	/* background-color : #e3e3e3; */
+	display : flex;
+	align-items : center;
+	
+}
+.input-area ion-icon {
+	flex-basis : 5%;
+	height : 2rem;
+	filter : opacity(0.8);
+	cursor : pointer;
+}
+.input-area ion-icon.send {
+	display : none;
+}
+.input-area ion-icon:hover {
+	filter : opacity(1.0);
+	transition : 0.5s ease-out;
+}
+.input-area input {
+	flex-basis : 80%;
+	border : none;
+	border-radius : 1rem;
+	height : 2rem;
+	padding : 0 1rem;
+	cursor : pointer;
+	background-color : #efefef;
+	outline : none;
+}
+.input-area input:hover {
+	background-color : #fff;
+	transition : 0.5s ease-out;
+}
+.input-area input:active {
+	background-color : #fff;
+}
+.input-area input:focus {
+	background-color : #fff;
+	outline : 1px solid #ddd;
+}
+.input-area input:focus + .mic {
+	display : none;
+}
+.input-area input:focus ~ .send {
+	display : block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
